@@ -1,0 +1,49 @@
+Arguments: 
+  H:\Node\node.exe C:\Users\coold\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js
+
+PATH: 
+  C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;H:\Node\;C:\Program Files\Git\cmd;C:\Users\coold\AppData\Local\Microsoft\WindowsApps;;C:\Users\coold\AppData\Local\Programs\Microsoft VS Code Insiders\bin;C:\Users\coold\AppData\Roaming\npm
+
+Yarn version: 
+  1.22.10
+
+Node version: 
+  14.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\Users\coold\AppData\Local\Yarn\Cache\v6\npm-@expo-vector-icons-12.0.4-52061fffab83ca74af52288b5f839b090f7dabed-integrity\node_modules\@expo\vector-icons\.yarn-tarball.tgz'
+
+npm manifest: 
+  {
+    "main": "node_modules/expo/AppEntry.js",
+    "scripts": {
+      "start": "expo start",
+      "android": "expo start --android",
+      "ios": "expo start --ios",
+      "web": "expo start --web",
+      "eject": "expo eject"
+    },
+    "dependencies": {
+      "expo": "~41.0.1",
+      "expo-status-bar": "~1.0.4",
+      "react": "16.13.1",
+      "react-dom": "16.13.1",
+      "react-native": "https://github.com/expo/react-native/archive/sdk-41.0.0.tar.gz",
+      "react-native-web": "~0.13.12",
+      "react-native-paper": "3.6.0",
+      "expo-constants": "~10.1.3"
+    },
+    "devDependencies": {
+      "@babel/core": "^7.9.0"
+    },
+    "private": true
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
