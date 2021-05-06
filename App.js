@@ -7,12 +7,26 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import { Ionicons } from '@expo/vector-icons';
 
 import { HomeScreen } from "./src/features/Home/screens/home.screen";
+import { AffiliatesScreen } from './src/features/Affiliates/screens/aff.screen';
+import { ContactScreen } from './src/features/Contacts/screens/contact.screen';
 
 const Tab = createMaterialTopTabNavigator();
 
-const Affiliates = () => <Text>Affiliates</Text>
-const Contacts = () => <Text>Contacts</Text>
+const TAB_ICON = {
+  Home: "md-home-outline",
+  Affiliates: "md-checkbox-outline",
+  Contacts: "md-people-outline"
+}
 
+
+const createScreenOptions = ({ route }) => {
+  const iconName = TAB_ICON[route.name];
+  return {
+    tabBarIcon: ({ color }) => (
+    <Ionicons name={iconName} size={30} color={color} />
+    ),
+  }
+}
 export default function App () {
   return (
     <SafeAreaView style={styles.container}>
@@ -22,22 +36,7 @@ export default function App () {
 
       <NavigationContainer>
           <Tab.Navigator
-            screenOptions={({ route }) => ({
-              tabBarIcon: ({ color, size }) => {
-                let iconName;
-
-                if (route.name === "Home") {
-                  iconName = "md-home-outline";
-                } else if (route.name === "Affiliates") {
-                  iconName = "md-checkbox-outline";
-                } else if (route.name === "Contacts") {
-                  iconName = "md-people-outline";
-                }
-
-                // You can return any component that you like here!
-                return <Ionicons name={iconName} size={30} color={color} />;
-              },
-            })}
+            screenOptions={createScreenOptions}
             tabBarOptions={{
               activeTintColor: "white",
               inactiveTintColor: "white",
@@ -59,8 +58,8 @@ export default function App () {
             }}
           >
             <Tab.Screen name="Home" component={HomeScreen} />
-            <Tab.Screen name="Affiliates" component={Affiliates} />
-            <Tab.Screen name="Contacts" component={Contacts} />
+            <Tab.Screen name="Affiliates" component={AffiliatesScreen} />
+            <Tab.Screen name="Contacts" component={ContactScreen} />
           </Tab.Navigator>
         </NavigationContainer>
 
@@ -79,11 +78,6 @@ const styles = StyleSheet.create({
   },
   appBar: {
       backgroundColor: 'black',
-  },
-  list: {
-      flex: 1,
-      // padding: 16,
-      backgroundColor: '#F3F5F4'
   },
 
 });
