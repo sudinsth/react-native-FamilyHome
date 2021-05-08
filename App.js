@@ -10,6 +10,8 @@ import { HomeScreen } from "./src/features/Home/screens/home.screen";
 import { AffiliatesScreen } from './src/features/Affiliates/screens/aff.screen';
 import { ContactScreen } from './src/features/Contacts/screens/contact.screen';
 
+import { globalStyles } from "./src/styles/global";
+
 const Tab = createMaterialTopTabNavigator();
 
 const TAB_ICON = {
@@ -17,7 +19,6 @@ const TAB_ICON = {
   Affiliates: "md-checkbox-outline",
   Contacts: "md-people-outline"
 }
-
 
 const createScreenOptions = ({ route }) => {
   const iconName = TAB_ICON[route.name];
@@ -29,8 +30,9 @@ const createScreenOptions = ({ route }) => {
 }
 export default function App () {
   return (
-    <SafeAreaView style={styles.container}>
-      <Appbar.Header style={styles.appBar}>
+    <SafeAreaView style={globalStyles.container}>
+      
+      <Appbar.Header style={globalStyles.appBar}>
         <Appbar.Content title='Family Home Christian Books' />
       </Appbar.Header>
 
@@ -63,21 +65,8 @@ export default function App () {
           </Tab.Navigator>
         </NavigationContainer>
 
-
-
       <ExpoStatusBar style="auto" />
     </SafeAreaView>
       
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      marginTop: StatusBar.currentHeight
-  },
-  appBar: {
-      backgroundColor: 'black',
-  },
-
-});

@@ -4,66 +4,31 @@ import {
   View,
   StyleSheet,
   SafeAreaView,
-  FlatList,
-  TouchableOpacity,
   Text,
-  Image
+  TextInput
 } from 'react-native';
 import { Card, ListItem, Button, Icon } from 'react-native-elements'
+import { Formik } from 'formik';
 
-const cardData = [
-    {
-        name: 'Customer Registration',
-        photo: '../../../../assets/personImg.png'  
-    },
-    {
-        name: 'Retail Store',
-        photo: '../../../../assets/personImg.png'
-    },
-];
+import { globalStyles } from '../../../styles/global';
 
 export const ContactScreen = () => (
-    <SafeAreaView style={styles.container}> 
+    <SafeAreaView style={globalStyles.container}> 
 
-        <View style={styles.list}>
-
-        <Text>Contacts</Text>
-        {/* <Card>
-            <Card.Title>CARD WITH DIVIDER</Card.Title>
+        <View style={globalStyles.list}>
+        <Card>
+            <Card.Title>REGISTERED CUSTOMERS</Card.Title>
             <Card.Divider/>
             {
-                cardData.map((u, i) => {
-                return (
-                    <View key={i} style={styles.user}>
-                    <Image
-                        style={styles.image}
-                        resizeMode="cover"
-                        source={require('../../../../assets/personImg.png')}
+                <View>
+                    <Formik 
+
                     />
-                    <Text style={styles.name}>{u.name}</Text>
-                    </View>
-                );
-                })
+                </View>
             }
-        </Card> */}
+        </Card>
 
         </View>
 
     </SafeAreaView>
 );
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight
-    },
-    appBar: {
-        backgroundColor: 'black',
-    },
-    list: {
-        flex: 1,
-        // padding: 16,
-        backgroundColor: '#F3F5F4'
-    },
-  
-  });

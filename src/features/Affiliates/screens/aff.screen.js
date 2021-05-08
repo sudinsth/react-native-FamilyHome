@@ -1,15 +1,16 @@
 import React from 'react';
 import {
-  StatusBar,
   View,
-  StyleSheet,
   SafeAreaView,
   FlatList,
   TouchableOpacity,
-  Text
+  Text,
+  Image
 } from 'react-native';
 
 import Card from "../../../components/card";
+
+import { globalStyles } from '../../../styles/global';
 
 const cardData = [
     {name: 'Affiliate Registration'   },
@@ -19,16 +20,24 @@ const cardData = [
 
 
 export const AffiliatesScreen = () => (
-    <SafeAreaView style={styles.container}> 
+    <SafeAreaView style={globalStyles.container}> 
 
-        <View style={styles.list}>
+        <View style={globalStyles.list}>
 
             <FlatList 
                 data={cardData}
                 renderItem={({ item }) => (
                     <TouchableOpacity>
                         <Card>
-                            <Text >{item.name}</Text>
+                            {/* <View>
+                                <Image
+                                    style={globalStyles.image}
+                                    source={require('../../../../assets/personImg.png')}
+                                />
+                            </View>     */}
+                            <View>
+                                <Text style={globalStyles.cardTex}>{item.name}</Text>
+                            </View>
                         </Card>
                     </TouchableOpacity>
                 )}
@@ -37,19 +46,3 @@ export const AffiliatesScreen = () => (
 
     </SafeAreaView>
 );
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: StatusBar.currentHeight
-    },
-    appBar: {
-        backgroundColor: 'black',
-    },
-    list: {
-        flex: 1,
-        // padding: 16,
-        backgroundColor: '#F3F5F4'
-    },
-  
-  });
