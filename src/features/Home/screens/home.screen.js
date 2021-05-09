@@ -5,7 +5,6 @@ import {
   FlatList,
   TouchableOpacity,
   Text,
-  Image
 } from 'react-native';
 import Card from "../../../components/card";
 import { globalStyles } from '../../../styles/global';
@@ -30,15 +29,7 @@ export const HomeScreen = () => (
                 renderItem={({ item }) => (
                     <TouchableOpacity>
                         <Card>
-                            {/* <View>
-                                <Image
-                                    style={styles.image}
-                                    source={require('../../../../assets/personImg.png')}
-                                />
-                            </View>     */}
-                            <View>
                                 <Text style={globalStyles.cardTex}>{item.name}</Text>
-                            </View>
                         </Card>
                     </TouchableOpacity>
                 )}

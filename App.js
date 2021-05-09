@@ -1,14 +1,15 @@
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
 import React from 'react';
-import { Text, StyleSheet, StatusBar, SafeAreaView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import { Appbar } from "react-native-paper";
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
 import { HomeScreen } from "./src/features/Home/screens/home.screen";
-import { AffiliatesScreen } from './src/features/Affiliates/screens/aff.screen';
-import { ContactScreen } from './src/features/Contacts/screens/contact.screen';
+import { AffiliatesScreen } from "./src/features/Affiliates/screens/aff.screen";
+import { ContactScreen } from "./src/features/Contacts/screens/contact.screen";
 
 import { globalStyles } from "./src/styles/global";
 
@@ -21,17 +22,18 @@ const TAB_ICON = {
 }
 
 const createScreenOptions = ({ route }) => {
-  const iconName = TAB_ICON[route.name];
-  return {
-    tabBarIcon: ({ color }) => (
-    <Ionicons name={iconName} size={30} color={color} />
-    ),
+    const iconName = TAB_ICON[route.name];
+    return {
+      tabBarIcon: ({ color }) => (
+      <Ionicons name={iconName} size={30} color={color} />
+      ),
+    }
   }
-}
+
 export default function App () {
   return (
     <SafeAreaView style={globalStyles.container}>
-      
+
       <Appbar.Header style={globalStyles.appBar}>
         <Appbar.Content title='Family Home Christian Books' />
       </Appbar.Header>
@@ -55,7 +57,7 @@ export default function App () {
               },
               indicatorStyle: {
                 backgroundColor: 'green',
-                height: 6
+                height: 5
               }
             }}
           >

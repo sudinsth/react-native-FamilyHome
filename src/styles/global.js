@@ -1,4 +1,5 @@
 import { StyleSheet, StatusBar } from 'react-native';
+import { Directions } from 'react-native-gesture-handler';
 
 export const globalStyles = StyleSheet.create({
     container: {
@@ -10,13 +11,9 @@ export const globalStyles = StyleSheet.create({
     },
     list: {
         flex: 1,
-        backgroundColor: '#F3F5F4'
+        backgroundColor: '#F3F5F4',
+        fontFamily: 'Tahoma'
     },
-    // image: {
-    //     height: 60,
-    //     width: 60,
-    //     margin: 10,
-    // },
     card: {
         elevation: 5,
         backgroundColor: "#fff",
@@ -30,11 +27,30 @@ export const globalStyles = StyleSheet.create({
     cardContent: {
         marginHorizontal: 10,
         marginVertical: 20,
-        textAlignVertical: 'center'
+        textAlignVertical: 'center',
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'space-between'
     },
     cardTex: {
-        // textAlign: 'left',
         fontSize: 20,
+        flex: 1,
     },
-    
+    iconImg: {
+        alignItems: 'flex-end',
+        flex: 1
+    },
+    input: {
+        borderWidth: 1,
+        borderColor: '#ddd',
+        padding: 10,
+        fontSize: 18,
+        borderRadius: 6,
+        marginVertical: 20
+    },
+    formText: {
+        fontFamily: 'sans-serif',
+        fontWeight: 'bold',
+        fontSize: 18
+    }
   });
