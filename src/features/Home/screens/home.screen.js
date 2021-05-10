@@ -12,14 +12,16 @@ import { globalStyles } from '../../../styles/global';
 const cardData = [
     {
         name: 'Customer Registration', 
+        to: 'CustomerReg'
     },
     {
         name: 'Retail Store',
+        to: 'RetailStore'
     },
 ];
 
 
-export const HomeScreen = () => (
+export const HomeScreen = ({ navigation }) => (
     <SafeAreaView style={globalStyles.container}> 
 
         <View style={globalStyles.list}>
@@ -27,12 +29,13 @@ export const HomeScreen = () => (
             <FlatList 
                 data={cardData}
                 renderItem={({ item }) => (
-                    <TouchableOpacity>
+                    <TouchableOpacity onPress={() => navigation.navigate(item.to)}>
                         <Card>
                                 <Text style={globalStyles.cardTex}>{item.name}</Text>
                         </Card>
                     </TouchableOpacity>
                 )}
+                keyExtractor={(item, index) => index.toString()}
             />
         </View>
 

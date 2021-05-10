@@ -41,6 +41,7 @@ export const AffiliatesScreen = () => (
                         </Card>
                     </TouchableOpacity>
                 )}
+                keyExtractor={(item, index) => index.toString()}
             />
         </View>
 

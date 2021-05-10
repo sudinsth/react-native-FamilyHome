@@ -1,18 +1,13 @@
 import { StyleSheet, StatusBar } from 'react-native';
-import { Directions } from 'react-native-gesture-handler';
 
 export const globalStyles = StyleSheet.create({
     container: {
         flex: 1,
         marginTop: StatusBar.currentHeight
     },
-    appBar: {
-        backgroundColor: 'black',
-    },
     list: {
         flex: 1,
         backgroundColor: '#F3F5F4',
-        fontFamily: 'Tahoma'
     },
     card: {
         elevation: 5,
@@ -43,14 +38,27 @@ export const globalStyles = StyleSheet.create({
     input: {
         borderWidth: 1,
         borderColor: '#ddd',
-        padding: 10,
+        padding: 8,
         fontSize: 18,
         borderRadius: 6,
-        marginVertical: 20
+        marginVertical: 12
     },
     formText: {
         fontFamily: 'sans-serif',
         fontWeight: 'bold',
-        fontSize: 18
+        fontSize: 16
+    },
+    errorText: {
+        color: 'crimson',
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
+    modalContent: {
+        flex: 1,
+    },
+    modalToggle: {
+        backgroundColor: "#F9F9F9",
+        padding: 20,
+        borderRadius: 6,
     }
   });
