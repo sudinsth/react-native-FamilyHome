@@ -37,7 +37,7 @@ export const CustomerRegScreen = () => {
 
     return (
     <SafeAreaView > 
-    <ScrollView>
+        <ScrollView>
     {/* Modal for category */}
         <View style={{backgroundColor:'#6993BB', padding: 30}}>
             <Modal visible={modalOpen} animationType='slide'>
@@ -69,6 +69,7 @@ export const CustomerRegScreen = () => {
                <Text style={{color: "black", fontSize: 20, alignSelf:'flex-start'}} > Categories </Text>
             </Icon.Button>
         </View>
+    {/* Modal End */}
 
         <View style={globalStyles.list}>
             
