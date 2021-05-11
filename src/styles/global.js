@@ -21,32 +21,33 @@ export const globalStyles = StyleSheet.create({
     },
     cardContent: {
         marginHorizontal: 10,
-        marginVertical: 20,
-        textAlignVertical: 'center',
+        marginVertical: 18,
         flex: 1,
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'center',
     },
     cardTex: {
         fontSize: 20,
         flex: 1,
+        textAlignVertical: 'center',
     },
     iconImg: {
         alignItems: 'flex-end',
-        flex: 1
+        justifyContent: 'center',
+        flex: 1,
     },
     input: {
         borderWidth: 1,
-        borderColor: '#ddd',
+        borderColor: '#646464',
         padding: 8,
         fontSize: 18,
         borderRadius: 6,
-        marginVertical: 12
+        marginVertical: 8
     },
     formText: {
         fontFamily: 'sans-serif',
         fontWeight: 'bold',
-        fontSize: 16
+        fontSize: 18
     },
     errorText: {
         color: 'crimson',
@@ -60,5 +61,26 @@ export const globalStyles = StyleSheet.create({
         backgroundColor: "#F9F9F9",
         padding: 20,
         borderRadius: 6,
+       
+    },
+    image: {
+        borderColor: 'green',
+        height: 60,
+        width: 60,
+        marginRight: 10,
+
+        flex:1,
+        alignItems: "flex-start", 
+        flexGrow: 0,
+        flexShrink: 1,
+        flexBasis: 50,
     }
   });
+
+  export const iconImages = {
+    Imgicon: {
+        'person': require('../../assets/personImg.png'),
+        'dollar': require('../../assets/dollaImg.png'),
+        'check': require('../../assets/checkImg.png')
+    }
+  }

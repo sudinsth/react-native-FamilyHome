@@ -7,9 +7,10 @@ import {
   TouchableWithoutFeedback,
   Keyboard,
   Modal,
-  ScrollView
+  ScrollView,
+  CheckBox
 } from 'react-native';
-import { Card, Button} from 'react-native-elements';
+import { Card, Button, } from 'react-native-elements';
 import { Formik } from 'formik';
 import * as yup from 'yup';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -32,8 +33,10 @@ const customerSchema = yup.object({
 
 export const CustomerRegScreen = () => {
     const [modalOpen, setModalOpen] = useState(false);
+    const [toggleCheckBox, setToggleCheckBox] = useState(false);
 
-    return (<SafeAreaView style={globalStyles.container}> 
+    return (
+    <SafeAreaView > 
     <ScrollView>
     {/* Modal for category */}
         <View style={{backgroundColor:'#6993BB', padding: 30}}>
@@ -44,8 +47,9 @@ export const CustomerRegScreen = () => {
                     style={globalStyles.modalToggle}
                     onPress={() => setModalOpen(false)}
                     color="black"
+                    size= {30}
                 >
-                    Categories
+                <Text style={{color: "black", fontSize: 20}} >Categories </Text>
                 </Icon.Button>
                 <Text>From the Category Modal</Text>
                 </View>
@@ -56,8 +60,13 @@ export const CustomerRegScreen = () => {
                 style={globalStyles.modalToggle}
                 onPress={() => setModalOpen(true)}
                 color="black"
+                size= {30}
+                iconStyle={{
+                    alignSelf: 'flex-end'
+                    
+                }}
             >
-               <Text style={{color: "black"}} > Categories </Text>
+               <Text style={{color: "black", fontSize: 20, alignSelf:'flex-start'}} > Categories </Text>
             </Icon.Button>
         </View>
 
@@ -82,7 +91,8 @@ export const CustomerRegScreen = () => {
                         >
                             {(formikProps) => (
                                 <View>
-                                    <Text style={globalStyles.formText}>First Name</Text>
+                                    <Text style={{textAlign:'left', fontSize: 16, fontWeight: 'bold', color: '#8cBc2C', paddingVertical: 10}}>PERSONAL INFORMATION</Text>
+                                    <Text style={globalStyles.formText}>First Name<Text style={{color:'green'}}>*</Text></Text>
                                     <TextInput 
                                         style={globalStyles.input}
                                         onChangeText={formikProps.handleChange('fn')}
@@ -91,7 +101,7 @@ export const CustomerRegScreen = () => {
                                     />
                                     <Text style={globalStyles.errorText}>{ formikProps.touched.fn && formikProps.errors.fn }</Text>
                                     
-                                    <Text style={globalStyles.formText}>Last Name</Text>
+                                    <Text style={globalStyles.formText}>Last Name<Text style={{color:'green'}}>*</Text></Text>
                                     <TextInput 
                                         style={globalStyles.input}
                                         onChangeText={formikProps.handleChange('ln')}
@@ -100,7 +110,7 @@ export const CustomerRegScreen = () => {
                                     />
                                     <Text style={globalStyles.errorText}>{ formikProps.touched.ln && formikProps.errors.ln }</Text>
                                     
-                                    <Text style={globalStyles.formText}>Email Address</Text>
+                                    <Text style={globalStyles.formText}>Email Address<Text style={{color:'green'}}>*</Text></Text>
                                     <TextInput 
                                         style={globalStyles.input}
                                         onChangeText={formikProps.handleChange('email')}
@@ -108,6 +118,22 @@ export const CustomerRegScreen = () => {
                                         onBlur={formikProps.handleBlur('email')}
                                     />
                                     <Text style={globalStyles.errorText}>{ formikProps.touched.email && formikProps.errors.email }</Text>
+                                    <View 
+                                        style={{
+                                            flexDirection: "row",
+                                            marginBottom: 20,
+                                        }}
+                                    >
+                                        <CheckBox
+                                        value={toggleCheckBox}
+                                        onValueChange={setToggleCheckBox}
+                                        style={{
+                                            alignSelf: "flex-start",
+                                            
+                                        }}
+                                        />
+                                        <Text style={{margin: 8, fontWeight:'bold', fontSize: 16}}>Sign Up for Newsletter</Text>
+                                    </View>
 
                                     <Button title='Submit' color='maroon' onPress={formikProps.handleSubmit} />
                                 </View>

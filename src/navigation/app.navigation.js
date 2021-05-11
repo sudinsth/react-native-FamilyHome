@@ -1,13 +1,11 @@
 import React from "react";
 
-import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import { Ionicons } from '@expo/vector-icons';
 
-import {HomeNavigator} from "../navigation/home.navigator";
-
 import { AffiliatesScreen } from "../features/Affiliates/screens/aff.screen";
 import { ContactScreen } from "../features/Contacts/screens/contact.screen";
+import { HomeScreen } from "../features/Home/screens/home.screen";
 
 
 const Tab = createMaterialTopTabNavigator();
@@ -28,7 +26,7 @@ const createScreenOptions = ({ route }) => {
   }
 
 export const AppNavigator = () => (
-    <NavigationContainer>
+    // <NavigationContainer>
         <Tab.Navigator
             screenOptions={createScreenOptions}
             tabBarOptions={{
@@ -51,11 +49,11 @@ export const AppNavigator = () => (
                 }
               }}
             >
-            <Tab.Screen name="Home" component={HomeNavigator} />
+            <Tab.Screen name="Home" component={HomeScreen} />
             <Tab.Screen name="Affiliates" component={AffiliatesScreen} />
             <Tab.Screen name="Contacts" component={ContactScreen} />
         </Tab.Navigator>
-   </NavigationContainer>
+  //  </NavigationContainer>
 );
 
         

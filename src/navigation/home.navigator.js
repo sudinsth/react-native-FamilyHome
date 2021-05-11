@@ -1,7 +1,10 @@
 import React from "react";
 
 import { createStackNavigator } from "@react-navigation/stack";
-import { HomeScreen } from "../features/Home/screens/home.screen";
+import { NavigationContainer } from '@react-navigation/native';
+
+import { AppNavigator } from "./app.navigation";
+
 import { CustomerRegScreen } from "../features/Customer/screen/customer.screen";
 import { RetailScreen } from "../features/Home/screens/retail";
 
@@ -10,19 +13,23 @@ const HomeStack = createStackNavigator();
 
 export const HomeNavigator = () => {
     return (
+        <NavigationContainer>
         <HomeStack.Navigator headerMode="float">
             <HomeStack.Screen
                 name="Home"
-                component={HomeScreen}
+                component={AppNavigator}
                 options={{
                     title: 'Family Home Christian Books',
                     headerStyle: {
-                        backgroundColor: 'black',
+                        backgroundColor: '#212121',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
-                        fontWeight: 'bold',
+                        fontWeight: 'normal',
+                        marginVertical: 50,
+                        fontSize: 24
                     },
+
                 }}
             />
             <HomeStack.Screen
@@ -31,12 +38,15 @@ export const HomeNavigator = () => {
                 options={{
                     title: 'Customer Registration',
                     headerStyle: {
-                        backgroundColor: 'black',
+                        backgroundColor: '#212121',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
-                        fontWeight: 'bold',
+                        fontWeight: 'normal',
+                        fontSize: 24,
+                        
                     },
+
                 }}
             />
             <HomeStack.Screen
@@ -45,14 +55,17 @@ export const HomeNavigator = () => {
                 options={{
                     title: 'Retail Store',
                     headerStyle: {
-                        backgroundColor: 'black',
+                        backgroundColor: '#212121',
                     },
                     headerTintColor: '#fff',
                     headerTitleStyle: {
-                        fontWeight: 'bold',
+                        fontWeight: 'normal',
+                        fontSize: 24
                     },
+
                 }}
             />
         </HomeStack.Navigator>
+        </NavigationContainer>
     );
 };

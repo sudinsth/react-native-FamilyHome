@@ -10,12 +10,22 @@ import {
 
 import Card from "../../../components/card";
 
-import { globalStyles } from '../../../styles/global';
+import { globalStyles, iconImages } from '../../../styles/global';
 
 const cardData = [
-    {name: 'Affiliate Registration'   },
-    {name: 'Affiliate Store'},
-    {name: 'Sales Aids'},
+    {
+        name: 'Affiliate Registration', 
+        img: 'person'
+    
+    },
+    {
+        name: 'Affiliate Store',
+        img: 'dollar'
+    },
+    {
+        name: 'Sales Aids',
+        img: 'check'
+    },
 ];
 
 
@@ -29,12 +39,12 @@ export const AffiliatesScreen = () => (
                 renderItem={({ item }) => (
                     <TouchableOpacity>
                         <Card>
-                            {/* <View>
+                            <View>
                                 <Image
                                     style={globalStyles.image}
-                                    source={require('../../../../assets/personImg.png')}
+                                    source={iconImages.Imgicon[item.img]}
                                 />
-                            </View>     */}
+                            </View>    
                             <View>
                                 <Text style={globalStyles.cardTex}>{item.name}</Text>
                             </View>

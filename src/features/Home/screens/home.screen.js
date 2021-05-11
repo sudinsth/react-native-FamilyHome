@@ -5,18 +5,21 @@ import {
   FlatList,
   TouchableOpacity,
   Text,
+  Image
 } from 'react-native';
 import Card from "../../../components/card";
-import { globalStyles } from '../../../styles/global';
+import { globalStyles, iconImages } from '../../../styles/global';
 
 const cardData = [
     {
         name: 'Customer Registration', 
-        to: 'CustomerReg'
+        to: 'CustomerReg',
+        img: 'person'
     },
     {
         name: 'Retail Store',
-        to: 'RetailStore'
+        to: 'RetailStore',
+        img: 'dollar'
     },
 ];
 
@@ -31,7 +34,15 @@ export const HomeScreen = ({ navigation }) => (
                 renderItem={({ item }) => (
                     <TouchableOpacity onPress={() => navigation.navigate(item.to)}>
                         <Card>
+                            <View>
+                                <Image
+                                    style={globalStyles.image}
+                                    source={iconImages.Imgicon[item.img]}
+                                />
+                            </View>
+                            <View>
                                 <Text style={globalStyles.cardTex}>{item.name}</Text>
+                            </View>
                         </Card>
                     </TouchableOpacity>
                 )}

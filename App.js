@@ -4,16 +4,15 @@ import { SafeAreaView } from 'react-native';
 
 import { globalStyles } from "./src/styles/global";
 
-
-import { Navigation } from "./src/navigation";
+import { HomeNavigator } from "./src/navigation/home.navigator";
 
 export default function App () {
   return (
     <SafeAreaView style={globalStyles.container}>
 
-        <Navigation />
+        <HomeNavigator />
 
-      <ExpoStatusBar style="auto" />
+      <ExpoStatusBar style="auto"/>
     </SafeAreaView>
       
   );
